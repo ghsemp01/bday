@@ -87,13 +87,15 @@
             <h3 style="text-align: center; color: #fff;font-weight: bold;">Happy Birthday Baby</h3>
             <h3 style="text-align: center;color: #fff;font-weight: bold;">I love you so much :)</h3>
             <br><br>
-            <h5 id='countdown' style="text-align: center;color: #fff;font-weight: bold;"></h3>
-             <div id='startbtn' style="display:none;text-align: center;color: #fff;font-weight: bold;"><button class='btn' id='start'>Start</button></h3>
+            <h5 id='countdown' style="text-align: center;color: #fff;font-weight: bold;"></h5>
+             <div id='startbtn' style="display:none;text-align: center;color: #fff;font-weight: bold;">
+              <button class='btn' id='start'>Start</button>
+            </div>
           </div>
-      
+    
     </div>
     <div id="main">
-     <ul class='cb-slideshow'>
+     <ul id='ulmain'>
              <li><span></span><div><h3>&nbsp;</h3></div></li>
              <li><span></span><div><h3>&nbsp;</h3></div></li>
              <li><span></span><div><h3>&nbsp;</h3></div></li>
@@ -213,7 +215,7 @@
    </div>
 <script>
     $(function(){
-      var  audio = document.getElementsByTagName("audio")[0];
+    
        var cnt = 30;
               var tmer = setInterval(function(){
                   cnt = cnt - 1;
@@ -231,11 +233,12 @@
    
      
       $('#start').click(function(){
-           audio.play();
+          var  audio = document.getElementsByTagName("audio")[0];
+                audio.play();
               $('#intro').hide();
               $('#main').fadeIn(100);
               audio.play();
-              $('#ulmain').addClass('class="cb-slideshow"');
+              $('#ulmain').addClass('cb-slideshow');
               audio.ontimeupdate = function() {
                       var secs =  Math.floor(audio.currentTime);
                       var current = 'time-'+ secs;
