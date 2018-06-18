@@ -19,7 +19,7 @@ html,body {
 }
 .cb-slideshow:after {
     content: '';
-    background: transparent url(../images/8.png) repeat top left;
+  
 }
 .cb-slideshow li span {
     width: 100%;
