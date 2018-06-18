@@ -4,30 +4,25 @@
   <meta charset="UTF-8">
   <title>Document</title>
   <style>
-
 @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-
 /* Firefox < 16 */
 @-moz-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-
 /* Internet Explorer */
 @-ms-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
 }
-
 /* Opera < 12.1 */
 @-o-keyframes fadein {
     from { opacity: 0; }
@@ -66,11 +61,12 @@
             text-align: center;
         
         }
+      
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/jquery.js" type="text/javascript"></script>
-  <script src="js/waitForImages.js" type="text/javascript"></script>
+
 <!-- Compiled and minified CSS -->
     
 
@@ -80,18 +76,20 @@
 </head>
 <body>
         
-    <audio id="audio1">
+    <audio id="audio1" preload >
       <source src="hwyf.mp3" type="audio/mpeg">
       <source src="hwyf.ogg" type="audio/ogg">
       <p>Your browser does not support HTML5 audio </p>
     </audio>
+
     <div id='intro' class="valign-wrapper" >
           <div style='width:100%;'>
             <h3 style="text-align: center; color: #fff;font-weight: bold;">Happy Birthday Baby</h3>
             <h3 style="text-align: center;color: #fff;font-weight: bold;">I love you so much :)</h3>
-  
+            <br><br>
+            <h5 id='countdown' style="text-align: center;color: #fff;font-weight: bold;"></h3>
           </div>
-       
+      
     </div>
     <div id="main">
      <ul class='cb-slideshow'>
@@ -215,14 +213,19 @@
 <script>
     $(function(){
       var  audio = document.getElementsByTagName("audio")[0];
-        var checker = setInterval(function(){
-          console.log(audio.buffered.end(0));
-          if(parseInt(audio.buffered.end(0)) > 60){
+       var cnt = 60;
+              var tmer = setInterval(function(){
+                  cnt = cnt - 1;
+                  $('#countdown').html(cnt + " secs remaining.");
+              },1000);
+
+       setTimeout(function(){
+
               audio.play();
-              clearTimeout(checker);
+            clearTimeout(tmer);
+
               $('#intro').hide();
               $('#main').fadeIn(100);
-
               audio.play();
               $('#ulmain').addClass('class="cb-slideshow"');
               audio.ontimeupdate = function() {
@@ -238,15 +241,12 @@
                           $('.'+changeme).addClass('active');
                       }
                  };
-          } 
-        }, 1000);
-
-
+          
+        }, 60000); 
        
    
      
-            
-      
+
     
     });
 </script>
