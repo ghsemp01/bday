@@ -214,32 +214,34 @@
    </div>
 <script>
     $(function(){
+      var  audio = document.getElementsByTagName("audio")[0];
+        var checker = setInterval(function(){
+          if(audio.buffered.end == audio.duration){
+              audio.play();
+              $('#intro').hide();
+              $('#main').fadeIn(100);
 
-      
+              audio.play();
+              $('#ulmain').addClass('class="cb-slideshow"');
+              audio.ontimeupdate = function() {
+                      var secs =  Math.floor(audio.currentTime);
+                      var current = 'time-'+ secs;
+                      console.log(current);
+                      if(secs ==  278){
+                        location.reload();
+                      }
+                      if($('.'+current).length){
+                          var changeme = current;
+                          $('.active').removeClass('active');
+                          $('.'+changeme).addClass('active');
+                      }
+                 };
+          } 
+        }, 1000);
+
 
        
-         $(document).waitForImages(function() {
-  
-    $('#intro').hide();
-            $('#main').fadeIn(100);
-            var  audio = document.getElementsByTagName("audio")[0];
-            audio.play();
-            $('#ulmain').addClass('class="cb-slideshow"');
-            audio.ontimeupdate = function() {
-                    var secs =  Math.floor(audio.currentTime);
-                    var current = 'time-'+ secs;
-                    console.log(current);
-                    if(secs ==  278){
-                      location.reload();
-                    }
-                    if($('.'+current).length){
-                        var changeme = current;
-                        $('.active').removeClass('active');
-                        $('.'+changeme).addClass('active');
-                    }
-               };
-});
-             
+   
      
             
       
