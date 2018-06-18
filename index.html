@@ -218,6 +218,7 @@
         var checker = setInterval(function(){
           if(audio.buffered.end == audio.duration){
               audio.play();
+              clearTimeout(checker);
               $('#intro').hide();
               $('#main').fadeIn(100);
 
