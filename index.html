@@ -88,6 +88,7 @@
             <h3 style="text-align: center;color: #fff;font-weight: bold;">I love you so much :)</h3>
             <br><br>
             <h5 id='countdown' style="text-align: center;color: #fff;font-weight: bold;"></h3>
+             <div id='startbtn' style="display:none;text-align: center;color: #fff;font-weight: bold;"><button class='btn' id='start'>Start</button></h3>
           </div>
       
     </div>
@@ -213,7 +214,7 @@
 <script>
     $(function(){
       var  audio = document.getElementsByTagName("audio")[0];
-       var cnt = 60;
+       var cnt = 30;
               var tmer = setInterval(function(){
                   cnt = cnt - 1;
                   $('#countdown').html(cnt + " secs remaining.");
@@ -221,9 +222,16 @@
 
        setTimeout(function(){
 
-              audio.play();
+           $('#countdown').hide();
             clearTimeout(tmer);
-
+            $('#startbtn').fadeIn(300);
+  
+        }, 30000); 
+       
+   
+     
+      $('#btnStart').click(function(){
+           audio.play();
               $('#intro').hide();
               $('#main').fadeIn(100);
               audio.play();
@@ -242,11 +250,7 @@
                       }
                  };
           
-        }, 60000); 
-       
-   
-     
-
+      });
     
     });
 </script>
