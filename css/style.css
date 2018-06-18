@@ -19,7 +19,6 @@ html,body {
 }
 .cb-slideshow:after {
     content: '';
-    background: transparent url(../images/8.png) repeat top left;
 }
 .cb-slideshow li span {
     width: 100%;
@@ -47,11 +46,11 @@ html,body {
     width: 100%;
     text-align: center;
     opacity: 0;
-    -webkit-animation: titleAnimation 36s linear infinite 0s;
-    -moz-animation: titleAnimation 36s linear infinite 0s;
-    -o-animation: titleAnimation 36s linear infinite 0s;
-    -ms-animation: titleAnimation 36s linear infinite 0s;
-    animation: titleAnimation 36s linear infinite 0s;
+    -webkit-animation: titleAnimation 274s linear infinite 0s;
+    -moz-animation: titleAnimation 274s linear infinite 0s;
+    -o-animation: titleAnimation 274s linear infinite 0s;
+    -ms-animation: titleAnimation 274s linear infinite 0s;
+    animation: titleAnimation 274s linear infinite 0s;
 }
 .cb-slideshow li div h3 {
     font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
