@@ -217,8 +217,9 @@
       
 
        
-          setTimeout(function(){
-              $('#intro').hide();
+         $('img').waitForImages(function() {
+  
+    $('#intro').hide();
             $('#main').fadeIn(100);
             var  audio = document.getElementsByTagName("audio")[0];
             audio.play();
@@ -236,7 +237,9 @@
                         $('.'+changeme).addClass('active');
                     }
                };
-          },10000);
+});
+             
+     
             
       
     
