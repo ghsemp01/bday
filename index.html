@@ -32,6 +32,7 @@
 }
         .lyrics{
             display:none;
+           
         }
        .active{
             display: block;
@@ -85,6 +86,7 @@
     </audio>
 
     <div id='intro' class="valign-wrapper" >
+      
           <div style='width:100%;'>
             <h3 style="text-align: center; color: #fff;font-weight: bold;">Happy Birthday Baby</h3>
             <h3 style="text-align: center;color: #fff;font-weight: bold;">I love you so much :)</h3>
@@ -161,7 +163,7 @@
                           <li><span></span><div><h3>&nbsp;</h3></div></li> 
 
         </ul>
-<section style="position: fixed; bottom: 20px; width: 100%;">
+<section style="position: fixed; bottom: 0px; width: 100%; background-color: rgba(0, 0, 0, 0.5);padding:10px;">
   <p class='lyrics time-1'> Hey Baby!!</p>
   <p class='lyrics time-5'>This song is for you!</p>
   <p class='lyrics time-15'> You are the one girl</p>
@@ -218,7 +220,7 @@
 <script>
     $(function(){
     
-       var cnt = 30;
+       var cnt = 5;
               var tmer = setInterval(function(){
                   cnt = cnt - 1;
                   $('#countdown').html(cnt + " secs remaining.");
@@ -230,7 +232,7 @@
             clearTimeout(tmer);
             $('#startbtn').fadeIn(300);
   
-        }, 30000); 
+        }, 5000); 
        
    
      
