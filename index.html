@@ -216,6 +216,7 @@
     $(function(){
       var  audio = document.getElementsByTagName("audio")[0];
         var checker = setInterval(function(){
+          console.log(audio.buffered.end + "== " + audio.duration);
           if(audio.buffered.end == audio.duration){
               audio.play();
               clearTimeout(checker);
