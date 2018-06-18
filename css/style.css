@@ -19,7 +19,7 @@ html,body {
 }
 .cb-slideshow:after {
     content: '';
-  
+    background: transparent url(../images/8.png) repeat top left;
 }
 .cb-slideshow li span {
     width: 100%;
@@ -383,13 +383,7 @@ animation-delay: 270s;
 -ms-animation-delay: 276s;
 animation-delay: 276s;
 }
-.cb-slideshow li:nth-child(48) span { background-image: url(../images/48.jpg); 
--webkit-animation-delay: 282s; 
--moz-animation-delay: 282s;
--o-animation-delay: 282s;
--ms-animation-delay: 282s;
-animation-delay: 282s;
-}
+
 .cb-slideshow li:nth-child(2) div {
 -webkit-animation-delay: 6s;
 -moz-animation-delay: 6s;
